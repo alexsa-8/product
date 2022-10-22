@@ -1,8 +1,10 @@
+package Product;
+
 import java.util.HashSet;
 import java.util.Objects;
 
 public class Recipes{
-    //private final Set<Product> productSet;
+    //private final Set<Product.Product> productSet;
     private final String nameRecipes;
     private final Double priseRecipes;
     private ListProducts listProducts;

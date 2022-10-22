@@ -1,3 +1,5 @@
+package Product;
+
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -8,7 +10,7 @@ public class ListProducts {
     public ListProducts() {
         listProducts=new HashSet<>();
     }
-    public void addProduct(Product product) throws ProductException{
+    public void addProduct(Product product) throws ProductException {
         if (listProducts.contains(product)){
             throw new ProductException("Продукт "+ product.getNameProduct()+ " уже есть.");
         } else {

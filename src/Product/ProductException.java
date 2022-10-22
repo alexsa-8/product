@@ -1,3 +1,5 @@
+package Product;
+
 public class ProductException extends Exception{
     public ProductException(){
 
@@ -9,6 +11,6 @@ public class ProductException extends Exception{
 
     @Override
     public String toString() {
-        return "ProductException{} " + super.toString();
+        return "Product.ProductException{} " + super.toString();
     }
 }
