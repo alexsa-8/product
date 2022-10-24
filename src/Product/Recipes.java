@@ -1,6 +1,6 @@
 package Product;
 
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Recipes{
@@ -9,7 +9,7 @@ public class Recipes{
     private final Double priseRecipes;
     private ListProducts listProducts;
 
-    public Recipes(String nameRecipes, HashSet<ListProducts> listProducts) {
+    public Recipes(String nameRecipes, HashMap<String, Double> listProducts) {
         this.nameRecipes = nameRecipes;
         priseRecipes = ListProducts.sumPriceProduct();
     }

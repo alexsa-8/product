@@ -13,6 +13,11 @@ public class Product extends ListProducts {
         this.weightProduct = Objects.requireNonNullElse(weightProduct, 0.0);
     }
 
+    public Product(String nameProduct, double weightProduct) {
+        this.nameProduct = nameProduct;
+        this.weightProduct = weightProduct;
+    }
+
     public String getNameProduct() {
         return nameProduct;
     }

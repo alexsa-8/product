@@ -1,7 +1,8 @@
 package Product;
 
 import java.util.Arrays;
-import java.util.HashSet;
+import java.util.HashMap;
+
 
 
 public class Main {
@@ -16,19 +17,20 @@ public class Main {
         Product radish = new Product("Редька", 35.0, 1.0);
         Product sunflowerOil = new Product("Подсолнечное масло", 110.0, 1.0);
 
-        HashSet<ListProducts> salad=new HashSet<>();
-        salad.add(tomato);
-        salad.add(cucumber);
-        salad.add(dill);
-        salad.add(sunflowerOil);
-        System.out.println(Arrays.toString(salad.toArray()));
+        HashMap<String, Double> salad=new HashMap<>();
+        //HashSet<ListProducts> salad=new HashSet<>();
+        salad.put("tomato", 4.0);
+        salad.put("cucumber", 4.0);
+        salad.put("dill", 1.0);
+        salad.put("sunflowerOil", 1.0);
+        System.out.println(Arrays.toString(salad.values().toArray(new Double[0])));
 
-        HashSet<ListProducts> vinaigrette=new HashSet<>();
-        vinaigrette.add(beet);
-        vinaigrette.add(potato);
-        vinaigrette.add(carrot);
-        vinaigrette.add(sunflowerOil);
-        System.out.println(Arrays.toString(vinaigrette.toArray()));
+        HashMap<String, Double> vinaigrette=new HashMap<>();
+        vinaigrette.put("beet", 3.0);
+        vinaigrette.put("potato", 3.0);
+        vinaigrette.put("carrot", 3.0);
+        vinaigrette.put("sunflowerOil", 1.0);
+        System.out.println(Arrays.toString(vinaigrette.values().toArray(new Double[0])));
 
         Recipes recipes=new Recipes("Салат", salad);
         Recipes recipes1=new Recipes("Винегрет", vinaigrette);
