@@ -1,4 +1,4 @@
-package hw_6_2;
+package hw_6_2_1;
 
 import java.util.*;
 
