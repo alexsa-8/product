@@ -71,7 +71,9 @@ public class Collection {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Collection that = (Collection) o;
-        return Objects.equals(collection, that.collection) && Objects.equals(integerList, that.integerList) && Objects.equals(element, that.element) && Objects.equals(sum, that.sum) && Objects.equals(random, that.random);
+        return Objects.equals(collection, that.collection) && Objects.equals(integerList, that.integerList)
+                && Objects.equals(element, that.element) && Objects.equals(sum, that.sum)
+                && Objects.equals(random, that.random);
     }
 
     @Override

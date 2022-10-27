@@ -1,11 +1,12 @@
 package Product;
-
 import java.util.Arrays;
 import java.util.HashMap;
 
 
 
 public class Main {
+    private static HashMap<String, Double> map;
+
     public static void main(String[] args) {
         Product grape = new Product("Виноград", 120.0, 2.5);
         Product tomato = new Product("Помидор", 95.0, 1.5);
@@ -18,7 +19,6 @@ public class Main {
         Product sunflowerOil = new Product("Подсолнечное масло", 110.0, 1.0);
 
         HashMap<String, Double> salad=new HashMap<>();
-        //HashSet<ListProducts> salad=new HashSet<>();
         salad.put("tomato", 4.0);
         salad.put("cucumber", 4.0);
         salad.put("dill", 1.0);
@@ -38,6 +38,5 @@ public class Main {
         bookRecipes.addRecipes(recipes);
         bookRecipes.addRecipes(recipes1);
         System.out.println(bookRecipes);
-
     }
 }

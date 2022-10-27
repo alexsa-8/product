@@ -1,11 +1,9 @@
 package Product;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class ListProducts {
-    private static Set<Product> listProducts;
+    static Set<Product> listProducts;
 
     public ListProducts() {
         listProducts=new HashSet<>();
@@ -28,21 +26,26 @@ public class ListProducts {
         return sum;
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
+        public double getSumProduct() {
+            return 0;
+        }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this==obj)return true;
-        if (obj==null || getClass() !=obj.getClass()) return false;
-        ListProducts that=(ListProducts) obj;
-        return Objects.equals(listProducts, that.listProducts);
-    }
+        @Override
+        public int hashCode() {
+            return super.hashCode();
+        }
 
-    @Override
+        @Override
+        public boolean equals(Object obj) {
+            if (this==obj)return true;
+            if (obj==null || getClass() !=obj.getClass()) return false;
+            ListProducts that=(ListProducts) obj;
+            return Objects.equals(listProducts, that.listProducts);
+        }
+
+        @Override
     public String toString() {
         return super.toString();
     }
+
 }

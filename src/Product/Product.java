@@ -1,16 +1,14 @@
 package Product;
 
-import java.util.Objects;
-
 public class Product extends ListProducts {
     private String nameProduct;
     private double priceProduct;
     private double weightProduct;
 
     public Product(String nameProduct, double priceProduct, double weightProduct) {
-        this.nameProduct = Objects.requireNonNullElse(nameProduct, "default");
-        this.priceProduct = Objects.requireNonNullElse(priceProduct, 0.0);
-        this.weightProduct = Objects.requireNonNullElse(weightProduct, 0.0);
+        this.nameProduct = nameProduct;
+        this.priceProduct = priceProduct;
+        this.weightProduct = weightProduct;
     }
 
     public Product(String nameProduct, double weightProduct) {
@@ -41,7 +39,6 @@ public class Product extends ListProducts {
     public void setWeightProduct(double weightProduct) {
             this.weightProduct = weightProduct;
     }
-
     @Override
     public String toString() {
         return "\nпродукт: "+getNameProduct()+
