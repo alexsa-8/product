@@ -2,7 +2,6 @@ import java.util.HashMap;
 import java.util.Objects;
 
 public class Recipes{
-    //private final Set<Product> productSet;
     private final String nameRecipes;
     private final Double priseRecipes;
     private ListProducts listProducts;
@@ -29,7 +28,9 @@ public class Recipes{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Recipes recipes = (Recipes) o;
-        return Double.compare(recipes.priseRecipes, priseRecipes) == 0 && Objects.equals(nameRecipes, recipes.nameRecipes) && Objects.equals(listProducts, recipes.listProducts);
+        return Double.compare(recipes.priseRecipes, priseRecipes) == 0 &&
+                Objects.equals(nameRecipes, recipes.nameRecipes) &&
+                Objects.equals(listProducts, recipes.listProducts);
     }
 
     @Override

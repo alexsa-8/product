@@ -32,6 +32,5 @@ public class Main {
         bookRecipes.addRecipes(recipes);
         bookRecipes.addRecipes(recipes1);
         System.out.println(bookRecipes);
-
     }
 }

@@ -1,18 +1,26 @@
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class ListProducts {
-    private static Set<Product> listProducts;
+    static Map<String, Double> listProducts;
+    private static Map<String, Double> listProducts1;
 
     public ListProducts() {
-        listProducts=new HashSet<>();
+        listProducts=new HashMap<>();
+    }
+    public void ListProducts1() { listProducts1=new HashMap<>();
     }
     public void addProduct(Product product) throws ProductException{
-        if (listProducts.contains(product)){
+        if (listProducts.containsKey(product.getNameProduct())){
             throw new ProductException("Продукт "+ product.getNameProduct()+ " уже есть.");
         } else {
-            listProducts.add(product);
+            listProducts.put(product.getNameProduct(), product.getWeightProduct());
+        }
+    }
+    public void addProduct1(Product product) throws ProductException{
+        if (listProducts1.containsKey(product.getNameProduct())){
+            throw new ProductException("Продукт "+ product.getNameProduct()+ " уже есть.");
+        } else {
+            listProducts1.put(product.getNameProduct(), product.getPriceProduct());
         }
     }
     public void deleteProduct(Product product){
@@ -20,8 +28,13 @@ public class ListProducts {
     }
     public static Double sumPriceProduct(){
         double sum =0;
-        for (Product product : listProducts){
-            sum +=(product.getPriceProduct()*product.getWeightProduct());
+        for (Map.Entry<String, Double> entry : listProducts.entrySet()){//Product product : listProducts
+            for (Map.Entry<String, Double> entry1 : listProducts1.entrySet()) {
+                if (Objects.equals(entry.getKey(), entry1.getKey())){
+                    sum+=entry.getValue()*entry1.getValue();
+                }
+            }
+            //sum +=(product.getPriceProduct()*entry.getValue());
         }
         return sum;
     }
@@ -41,6 +54,7 @@ public class ListProducts {
 
     @Override
     public String toString() {
+
         return super.toString();
     }
 }
