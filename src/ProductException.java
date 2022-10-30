@@ -3,8 +3,8 @@ public class ProductException extends Exception{
 
     }
 
-    public ProductException(String information){
-        super(information);
+    public ProductException(String message){
+        super(message);
     }
 
     @Override

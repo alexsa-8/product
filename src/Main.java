@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.HashMap;
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ProductException {
         Product grape = new Product("Виноград", 120.0, 2.5);
         Product tomato = new Product("Помидор", 95.0, 1.5);
         Product cucumber = new Product("Огурец", 80.0, 2.0);
@@ -26,8 +26,8 @@ public class Main {
         vinaigrette.put("sunflowerOil", 1.0);
         System.out.println(Arrays.toString(vinaigrette.values().toArray(new Double[0])));
 
-        Recipes recipes=new Recipes("Салат", salad);
-        Recipes recipes1=new Recipes("Винегрет", vinaigrette);
+        Recipe recipes=new Recipe("Салат", salad);
+        Recipe recipes1=new Recipe("Винегрет", vinaigrette);
         BookRecipes bookRecipes=new BookRecipes();
         bookRecipes.addRecipes(recipes);
         bookRecipes.addRecipes(recipes1);

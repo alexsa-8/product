@@ -1,12 +1,13 @@
 import java.util.HashMap;
 import java.util.Objects;
 
-public class Recipes{
+public class Recipe {
+
     private final String nameRecipes;
     private final Double priseRecipes;
     private ListProducts listProducts;
 
-    public Recipes(String nameRecipes, HashMap<String, Double> listProducts) {
+    public Recipe(String nameRecipes, HashMap<String, Double> listProducts){
         this.nameRecipes = nameRecipes;
         priseRecipes = ListProducts.sumPriceProduct();
     }
@@ -27,10 +28,10 @@ public class Recipes{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Recipes recipes = (Recipes) o;
-        return Double.compare(recipes.priseRecipes, priseRecipes) == 0 &&
-                Objects.equals(nameRecipes, recipes.nameRecipes) &&
-                Objects.equals(listProducts, recipes.listProducts);
+        Recipe recipe = (Recipe) o;
+        return Objects.equals(nameRecipes, recipe.nameRecipes) &&
+                Objects.equals(priseRecipes, recipe.priseRecipes) &&
+                Objects.equals(listProducts, recipe.listProducts);
     }
 
     @Override
@@ -40,10 +41,10 @@ public class Recipes{
 
     @Override
     public String toString() {
-        return "Рецепт " +
-                "название " + nameRecipes + '\'' +
-                ", продукты " + listProducts +
-                ", цена " + priseRecipes +
-                " руб.";
+        return "Recipe{" +
+                "nameRecipes='" + nameRecipes + '\'' +
+                ", priseRecipes=" + priseRecipes +
+                ", listProducts=" + listProducts +
+                '}';
     }
 }

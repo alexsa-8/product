@@ -3,12 +3,12 @@ import java.util.Objects;
 import java.util.Set;
 
 public class BookRecipes {
-    private final Set<Recipes> bookRecipes;
+    private final Set<Recipe> bookRecipes;
 
     public BookRecipes() {
         bookRecipes = new HashSet<>();
     }
-    public void addRecipes(Recipes recipes) throws RuntimeException{
+    public void addRecipes(Recipe recipes) throws RuntimeException{
         if (bookRecipes.contains(recipes)){
         throw new RuntimeException("Указаный рецепт уже существует.");
         }else {
