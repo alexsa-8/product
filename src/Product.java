@@ -2,10 +2,10 @@ import java.util.Objects;
 
 public class Product extends ListProducts {
     private final String nameProduct;
-    private  double priceProduct;
-    private double weightProduct;
+    private int priceProduct;
+    private int weightProduct;
 
-    public Product(String nameProduct, double priceProduct, double weightProduct) throws ProductException {
+    public Product(String nameProduct, int priceProduct, int weightProduct) throws ProductException {
         if (nameProduct == null || nameProduct.isBlank()) {
             throw new ProductException("Укажите название продукта.");
         } else {
@@ -20,25 +20,25 @@ public class Product extends ListProducts {
         return nameProduct;
     }
 
-    public double getPriceProduct() {
+    public int getPriceProduct() {
         return priceProduct;
     }
 
-    public void setPriceProduct(Double priceProduct) throws ProductException {
-        if ((priceProduct == null) || (priceProduct < 0)) {
+    public void setPriceProduct(int priceProduct) throws ProductException {
+        if ((priceProduct == 0) || (priceProduct < 0)) {
             throw new ProductException("Укажите цену продукта.");
         } else {
             this.priceProduct = priceProduct;
         }
     }
 
-    public Double getWeightProduct() {
+    public Integer getWeightProduct() {
         return weightProduct;
     }
 
-    public void setWeightProduct(Double weightProduct) {
+    public void setWeightProduct(Integer weightProduct) {
         if (weightProduct == null) {
-            this.weightProduct = 1.0;
+            this.weightProduct = 1;
         } else {
             this.weightProduct = weightProduct;
         }

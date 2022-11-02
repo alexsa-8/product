@@ -4,10 +4,11 @@ import java.util.Objects;
 public class Recipe {
 
     private final String nameRecipes;
-    private final Double priseRecipes;
+    private final int priseRecipes;
     private ListProducts listProducts;
 
-    public Recipe(String nameRecipes, HashMap<String, Double> listProducts){
+
+    public Recipe(String nameRecipes, HashMap<String, Integer> listProducts) {
         this.nameRecipes = nameRecipes;
         priseRecipes = ListProducts.sumPriceProduct();
     }
@@ -16,7 +17,7 @@ public class Recipe {
         return nameRecipes;
     }
 
-    public Double getPriseRecipes() {
+    public int getPriseRecipes() {
         return priseRecipes;
     }
 
@@ -29,9 +30,7 @@ public class Recipe {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Recipe recipe = (Recipe) o;
-        return Objects.equals(nameRecipes, recipe.nameRecipes) &&
-                Objects.equals(priseRecipes, recipe.priseRecipes) &&
-                Objects.equals(listProducts, recipe.listProducts);
+        return priseRecipes == recipe.priseRecipes && Objects.equals(nameRecipes, recipe.nameRecipes) && Objects.equals(listProducts, recipe.listProducts);
     }
 
     @Override
@@ -41,10 +40,8 @@ public class Recipe {
 
     @Override
     public String toString() {
-        return "Recipe{" +
-                "nameRecipes='" + nameRecipes + '\'' +
-                ", priseRecipes=" + priseRecipes +
-                ", listProducts=" + listProducts +
-                '}';
+        return "Название рецепта: " + nameRecipes + '\'' +
+                ", цена: " + priseRecipes +
+                ", продукты: " + listProducts;
     }
 }
