@@ -1,48 +1,46 @@
 package Product;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class ListProducts {
-    private static Set<Product> listProducts;
+    static Map<Product, Integer> listProduct;
 
     public ListProducts() {
-        listProducts=new HashSet<>();
-    }
-    public void addProduct(Product product) throws ProductException {
-        if (listProducts.contains(product)){
-            throw new ProductException("Продукт "+ product.getNameProduct()+ " уже есть.");
-        } else {
-            listProducts.add(product);
-        }
-    }
-    public void deleteProduct(Product product){
-        listProducts.remove(product);
-    }
-    public static Double sumPriceProduct(){
-        double sum =0;
-        for (Product product : listProducts){
-            sum +=(product.getPriceProduct()*product.getWeightProduct());
-        }
-        return sum;
+        listProduct = new HashMap<>();
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
+    public void addProduct(Product product) throws ProductException {
+        if (listProduct.containsKey(product)) {
+            throw new ProductException("Продукт " + product.getNameProduct() + " уже есть.");
+        } else {
+            listProduct.put(product, product.getWeightProduct());
+        }
+    }
+
+    public void deleteProduct(Product product) {
+        listProduct.remove(product);
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this==obj)return true;
-        if (obj==null || getClass() !=obj.getClass()) return false;
-        ListProducts that=(ListProducts) obj;
-        return Objects.equals(listProducts, that.listProducts);
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        ListProducts that = (ListProducts) obj;
+        return Objects.equals(listProduct, that.listProduct);
+    }
+
+    @Override
+    public int hashCode() {
+        return  Objects.hash(listProduct);
+        //return +super.hashCode();
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "ListProduct{" +
+                "listProduct=" + listProduct +
+                '}';
+        //return super.toString() + listProduct;
     }
 }
+

@@ -5,15 +5,16 @@ import java.util.Objects;
 import java.util.Set;
 
 public class BookRecipes {
-    private final Set<Recipes> bookRecipes;
+    private final Set<Recipe> bookRecipes;
 
     public BookRecipes() {
         bookRecipes = new HashSet<>();
     }
-    public void addRecipes(Recipes recipes) throws RuntimeException{
-        if (bookRecipes.contains(recipes)){
-        throw new RuntimeException("Указаный рецепт уже существует.");
-        }else {
+
+    public void addRecipes(Recipe recipes) throws RuntimeException {
+        if (this.bookRecipes.contains(recipes)) {
+            throw new RuntimeException("Указаный рецепт уже существует.");
+        } else {
             bookRecipes.add(recipes);
         }
     }
@@ -33,6 +34,7 @@ public class BookRecipes {
 
     @Override
     public String toString() {
-        return "Книга рецептов " + bookRecipes+"\n";
+        return "Книга рецептов " + bookRecipes + "\n";
     }
 }
+
